@@ -1,6 +1,6 @@
-import random as rn
+f = open("", "r")
+print(f.read())
 
-normalseed = rn.randint(0, 1000000000)
 mapx = 1000
 mapy = 1000
 

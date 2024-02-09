@@ -7,3 +7,7 @@ stats = {'health' : 100,
          'intelligence' : 2,
          'vision' : 2
         }
+
+if stats['health'] <= 0:
+  running = False
+
