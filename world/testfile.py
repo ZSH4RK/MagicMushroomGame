@@ -1,5 +1,5 @@
-from enum import Enum
 import random as rn
+from enum import Enum
 
 import matplotlib.image as mpimg
 from PIL import Image
@@ -35,18 +35,20 @@ class colourwords(Enum):
   SWAMP = 17
 
 class terrainwords(Enum):
+  #Trees
   OAK_TREE = 1
-  SPRUCE_TREE = 2
-  BIRCH_TREE = 3
-  BAOBOB = 4
-  MUSHROOMS = 5
-  BUSH = 6
-  FLOWERS = 7
-  SMALL_ROCK = 8
-  LARGE_ROCK = 9
-  POND = 10
-  GEYSER = 11
-  WATERFALL = 12
+  JUNGLE_TREE = 2
+  SPRUCE_TREE = 3
+  BIRCH_TREE = 4
+  BAOBOB = 5
+  MUSHROOMS = 6
+  BUSH = 7
+  FLOWERS = 8
+  SMALL_ROCK = 9
+  LARGE_ROCK = 10
+  POND = 11
+  GEYSER = 12
+  WATERFALL = 13
 
 image_biomes = []
 if image_colours == (54, 62, 150):
@@ -102,11 +104,3 @@ def place_trees(image_biomes):
             terrain.append(terrainwords.OAK_TREE)
           else:
             terrain.append(None)
-            
-
-
-
-
-      
-        
-      
