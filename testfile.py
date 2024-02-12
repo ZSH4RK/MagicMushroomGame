@@ -1,4 +1,5 @@
 from enum import Enum
+import random as rn
 
 import matplotlib.image as mpimg
 from PIL import Image
@@ -12,7 +13,7 @@ img = Image.open(image_path)
 max_colors = 10000
 
 image_colours = img.getcolors(max_colors)
-
+terrain = []
 
 class colourwords(Enum):
   OCEAN = 1
@@ -33,6 +34,19 @@ class colourwords(Enum):
   TAIGA = 16
   SWAMP = 17
 
+class terrainwords(Enum):
+  OAK_TREE = 1
+  SPRUCE_TREE = 2
+  BIRCH_TREE = 3
+  BAOBOB = 4
+  MUSHROOMS = 5
+  BUSH = 6
+  FLOWERS = 7
+  SMALL_ROCK = 8
+  LARGE_ROCK = 9
+  POND = 10
+  GEYSER = 11
+  WATERFALL = 12
 
 image_biomes = []
 if image_colours == (54, 62, 150):
@@ -69,3 +83,30 @@ elif image_colours == (62, 87, 71):
   image_biomes.append(colourwords.TAIGA)
 elif image_colours == (92, 112, 104):
   image_biomes.append(colourwords.SWAMP)
+
+
+def place_trees(image_biomes):
+  for i in range(len(image_biomes)):
+    if terrain[i] is not None:
+      match image_biomes:
+        case colourwords.GRASSLAND:
+          treechance = rn.randint(1, 100)
+          if treechance == 1:
+            terrain.append(terrainwords.OAK_TREE)
+          else:
+            terrain.append(None)
+
+        case colourwords.TEMPERATE_DECIDUOUS_FOREST:
+          treechance = rn.randint(1, 4)
+          if treechance == 1:
+            terrain.append(terrainwords.OAK_TREE)
+          else:
+            terrain.append(None)
+            
+
+
+
+
+      
+        
+      
