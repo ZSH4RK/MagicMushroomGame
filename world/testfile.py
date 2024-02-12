@@ -49,6 +49,10 @@ class terrainwords(Enum):
   POND = 11
   GEYSER = 12
   WATERFALL = 13
+  #underwater
+  CORAL = 14
+  REEF = 15
+  ANEMONE = 16
 
 image_biomes = []
 if image_colours == (54, 62, 150):
@@ -87,20 +91,30 @@ elif image_colours == (92, 112, 104):
   image_biomes.append(colourwords.SWAMP)
 
 
-def place_trees(image_biomes):
-  for i in range(len(image_biomes)):
-    if terrain[i] is not None:
-      match image_biomes:
-        case colourwords.GRASSLAND:
-          treechance = rn.randint(1, 100)
-          if treechance == 1:
-            terrain.append(terrainwords.OAK_TREE)
-          else:
-            terrain.append(None)
-
-        case colourwords.TEMPERATE_DECIDUOUS_FOREST:
-          treechance = rn.randint(1, 4)
-          if treechance == 1:
-            terrain.append(terrainwords.OAK_TREE)
-          else:
-            terrain.append(None)
+def place_trees():
+  def place_oak_tree(image_biomes):
+    for i in range(len(image_biomes)):
+      if terrain[i] is not None:
+        
+        match image_biomes:
+          case colourwords.GRASSLAND:
+            treechance = rn.randint(1, 100)
+            if treechance == 1:
+              terrain.append(terrainwords.OAK_TREE)
+            else:
+              terrain.append(None)
+  
+          case colourwords.TEMPERATE_DECIDUOUS_FOREST:
+            treechance = rn.randint(1, 4)
+            if treechance == 1:
+              terrain.append(terrainwords.OAK_TREE)
+            else:
+              terrain.append(None)
+  def place_jungle_tree(image_biomes):
+    for i in range(len(image_biomes)):
+      if terrain[i] is not None:
+        match image_biomes:
+          case colourwords.TROPICAL_SEASONAL_FOREST:
+            treechance = rn.randint(1, 7)
+            if treechance == 1:
+              terrain.append(terrainwords.JUNGLE_TREE)
