@@ -55,3 +55,17 @@ elif image_colours == (55, 181, 43):
   image_biomes.append(colourwords.GRASSLAND)
 elif image_colours == (62, 138, 55):
   image_biomes.append(colourwords.TEMPERATE_DECIDUOUS_FOREST)
+elif image_colours == (161, 38, 255):
+  image_biomes.append(colourwords.TEMPERATE_RAIN_FOREST)
+elif image_colours == (255, 214, 153):
+  image_biomes.append(colourwords.SUBTROPICAL_DESERT)
+elif image_colours == (102, 153, 0):
+  image_biomes.append(colourwords.TROPICAL_SEASONAL_FOREST)
+elif image_colours == (255, 0, 119):
+  image_biomes.append(colourwords.TROPICAL_RAIN_FOREST)
+elif image_colours == (255, 255, 255):
+  image_biomes.append(colourwords.SNOW)
+elif image_colours == (62, 87, 71):
+  image_biomes.append(colourwords.TAIGA)
+elif image_colours == (92, 112, 104):
+  image_biomes.append(colourwords.SWAMP)
